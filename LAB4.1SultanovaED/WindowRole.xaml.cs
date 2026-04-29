@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace LAB4._1SultanovaED
+namespace WpfAppSultanovaED
 {
     /// <summary>
     /// Логика взаимодействия для WindowRole.xaml

@@ -1,4 +1,4 @@
-﻿using LAB4._1SultanovaED;
+﻿using WpfAppSultanovaED;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LAB4._1SultanovaED
+namespace WpfAppSultanovaED
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
