@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace LAB4._1SultanovaED
+namespace WpfAppSultanovaED
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml

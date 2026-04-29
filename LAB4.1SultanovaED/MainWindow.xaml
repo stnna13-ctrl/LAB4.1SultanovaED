@@ -1,16 +1,26 @@
-﻿<Window x:Class="WpfAppSultanovaED.MainWindow"
+<Window x:Class="WpfAppSultanovaED.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LAB4._1SultanovaED"
+        xmlns:local="clr-namespace:WpfAppSultanovaED"
         mc:Ignorable="d"
-        Title="Главное меню" Height="200" Width="300">
-
-    <Menu>
-        <MenuItem Header="Данные">
-            <MenuItem Header="Сотрудники" Click="MenuItem_Employee_Click"/>
-            <MenuItem Header="Должности" Click="MenuItem_Role_Click"/>
-        </MenuItem>
-    </Menu>
+        Title="MainWindow" Height="450" Width="600"
+        Background="White">
+    <Grid Margin="10" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Background="DarkGray" Foreground="White">
+            <MenuItem Header="_Справочники">
+                <MenuItem Header="_Сотрудники" Command="{Binding ShowEmployeesCommand}"/>
+                <MenuItem Header="_Должности"   Command="{Binding ShowRolesCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Выход" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl Grid.Row="1" x:Name="mainContent"/>
+    </Grid>
 </Window>

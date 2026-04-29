@@ -1,4 +1,3 @@
-﻿using WpfAppSultanovaED;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,29 +12,37 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppSultanovaED.View;
+using WpfAppSultanovaED.ViewModel;
 
-namespace WpfAppSultanovaED
+namespace WpfAppSultanovaED.ViewModel
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-{
-    public MainWindow()
+    public class MainViewModel
     {
-        InitializeComponent();
-    }
+        public RoleViewModel RoleVM { get; }
+        public PersonViewModel PersonVM { get; }
 
-    private void MenuItem_Employee_Click(object sender, RoutedEventArgs e)
-    {
-        WindowEmployee win = new WindowEmployee();
-        win.ShowDialog();
-    }
+        public MainViewModel()
+        {
+            // ������ ������ �� JSON
+            RoleVM = new RoleViewModel();
+            PersonVM = new PersonViewModel(RoleVM);
+        }
 
-    private void MenuItem_Role_Click(object sender, RoutedEventArgs e)
-    {
-        WindowRole win = new WindowRole();
-        win.ShowDialog();
+        // ������� ��� ����
+        public ICommand ShowRolesCommand { get; }
+        public ICommand ShowEmployeesCommand { get; }
+
+        private void ShowRoles()
+        {
+            var window = new WindowRole(RoleVM);
+            window.ShowDialog();
+        }
+
+        private void ShowEmployees()
+        {
+            var window = new WindowEmployee(PersonVM);
+            window.ShowDialog();
+        }
     }
-}
 }

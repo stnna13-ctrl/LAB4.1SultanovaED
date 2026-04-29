@@ -1,20 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfAppSultanovaED.Model;
 
-    public class FindRole
+namespace WpfAppSultanovaED.Helper
 {
-    private int _roleId;
-
-    public FindRole(int roleId)
+    public class FindRole
     {
-        _roleId = roleId;
-    }
+        private int _roleId;
 
-    public bool RolePredicate(Role role)
-    {
-        return role.Id == _roleId;
+        public FindRole(int roleId)
+        {
+            _roleId = roleId;
+        }
+
+        public bool RolePredicate(Role role)
+        {
+            return role.Id == _roleId;
+        }
     }
 }
